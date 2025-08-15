@@ -1,8 +1,0 @@
-// Activar carrusel automático con intervalo de 3 segundos
-const carrusel = document.querySelector('#carruselMTB');
-const bootstrapCarrusel = new bootstrap.Carousel(carrusel, {
-    interval: 3000, // tiempo en milisegundos
-    ride: 'carousel'
-});
-
-
