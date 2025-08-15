@@ -167,9 +167,21 @@ function actualizarCarrito() {
   const totalItem = document.createElement("li");
   totalItem.innerHTML = `<span class="dropdown-item-text fw-bold">Total: $${total.toLocaleString()}</span>`;
   cartItems.appendChild(totalItem);
+
+  const vaciarBtnItem = document.createElement("li");
+  vaciarBtnItem.innerHTML = `
+  <button class="dropdown-item text-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
+`;
+  cartItems.appendChild(vaciarBtnItem);
+
+  
 }
-
-
 
 // Inicializar carrito al cargar
 actualizarCarrito();
+
+function vaciarCarrito() {
+  carrito = [];
+  localStorage.removeItem("carrito");
+  actualizarCarrito();
+}
